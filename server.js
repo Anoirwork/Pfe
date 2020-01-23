@@ -17,6 +17,7 @@ app.use((req, res, next) => {
     if(req.method === 'OPTIONS'){
         return res.sendStatus(200);
     }
+    next();
 
 });
 
@@ -32,7 +33,7 @@ app.use('/api', graphqlHttp({
 
 mongoose.connect(`mongodb+srv://admin:wowlol123@cluster0-dvwlr.gcp.mongodb.net/events-react-dev?retryWrites=true&w=majority`)
         .then(() => {
-            app.listen(8000);
+            app.listen(4000);
             console.log("**hearing**");
         }).catch(err => {
             console.log(err);
